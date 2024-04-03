@@ -1,0 +1,27 @@
+<div class="text-center m-5" *ngIf="true">
+  <h2 class="text-danger">Sorry, No recipes match your search...</h2>
+</div>
+
+<div class="row" *ngIf="!loading">
+  <div
+    class="col-sm-12 col-md-6 col-lg-4 p-2"
+    *ngFor="
+      let user of displayedList
+        | paginate
+          : {
+              id: 'server',
+              itemsPerPage: itemsPerPage,
+              currentPage: page,
+              totalItems: totalItems
+            }
+    "
+  >
+    <app-user-card [userData]="user"></app-user-card>
+  </div>
+</div>
+<div class="text-center">
+  <pagination-controls
+    (pageChange)="getPage($event)"
+    id="server"
+  ></pagination-controls>
+</div>
