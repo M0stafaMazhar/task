@@ -11,6 +11,7 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
 import { NgxPaginationModule } from 'ngx-pagination';
 import { LoadingSpinerComponent } from './components/loading-spiner/loading-spiner.component';
 import { ErrMessageComponent } from './components/err-message/err-message.component';
+import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ErrMessageComponent } from './components/err-message/err-message.compon
     UserDetailsComponent,
     LoadingSpinerComponent,
     ErrMessageComponent,
+    NotFoundPageComponent,
   ],
   imports: [
     BrowserModule,
