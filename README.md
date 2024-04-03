@@ -1,27 +1,56 @@
-# Task
+# Users Data Website
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.7.
+This website is integrated with the Users Info API to display user data. It consists of various components and services to manage user information efficiently.
 
-## Development server
+## Components
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### 1. Users List Component
 
-## Code scaffolding
+- Displays data of multiple users.
+- Utilizes the User Card Component to represent each user.
+- Implements server-side pagination using ngx-pagination for improved performance.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### 2. User Card Component
 
-## Build
+- Presents detailed information about a single user.
+- Nested within the Users List Component to represent individual users.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### 3. Loading Spinner Component
 
-## Running unit tests
+- Indicates when data is being fetched from the server.
+- Provides visual feedback to users during data loading processes.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### 4. Error Message Component
 
-## Running end-to-end tests
+- Displays error messages when data retrieval encounters issues.
+- Ensures users are informed about any errors that occur during the application's operation.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### 5. User Details Component
 
-## Further help
+- Shows comprehensive details about a selected user.
+- Enables users to view specific information related to individual users.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Services
+
+### 1. Data Service
+
+- Responsible for fetching user data from the server.
+- Facilitates communication between the frontend application and the Users Info API.
+
+## Interfaces
+
+- **User Interface**: Defines the structure of user data fetched from the server.
+- **Response Interface**: Specifies the format of responses received from API requests.
+
+## Dependencies
+
+- **ngx-pagination**: Utilized to implement server-side pagination, enhancing the performance of data retrieval operations.
+
+## Usage
+
+To run the website locally, follow these steps:
+
+1. Clone the repository to your local machine.
+2. Install dependencies using `npm install`.
+3. Run the application with `ng serve`.
+4. Access the website through the provided localhost address in your browser.
