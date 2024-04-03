@@ -1,10 +1,15 @@
-<div class="text-center m-5" *ngIf="true">
-  <h2 class="text-danger">Sorry, No recipes match your search...</h2>
+<div class="text-center" *ngIf="loading">
+  <app-loading-spiner></app-loading-spiner>
 </div>
 
-<div class="row" *ngIf="!loading">
+<app-err-message *ngIf="error"></app-err-message>
+
+<div class="row" *ngIf="!loading && !error">
+  <div class="text-center m-5" *ngIf="!displayedList.length && !loading">
+    <h2 class="text-primary">Sorry, No Users match your search...</h2>
+  </div>
   <div
-    class="col-sm-12 col-md-6 col-lg-4 p-2"
+    class="p-2 col-12 col-md-6 col-lg-4"
     *ngFor="
       let user of displayedList
         | paginate
@@ -16,7 +21,9 @@
             }
     "
   >
-    <app-user-card [userData]="user"></app-user-card>
+    <div class="card border-primary text-center">
+      <app-user-card [userData]="user"></app-user-card>
+    </div>
   </div>
 </div>
 <div class="text-center">

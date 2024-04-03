@@ -1,4 +1,15 @@
-<button class="btn btn-outline-danger border-0" (click)="navigateBack()">
+<button class="btn btn-outline-primary border-0" (click)="navigateBack()">
   <i class="bi bi-arrow-left-circle"></i>
 </button>
-<app-user-card [userData]="userData" *ngIf="!loading"></app-user-card>
+
+<app-err-message *ngIf="error"></app-err-message>
+<div class="text-center" *ngIf="loading">
+  <app-loading-spiner></app-loading-spiner>
+</div>
+<div
+  class="card col-12 col-lg-6 mx-auto border-primary text-center text-primary"
+  *ngIf="!loading && !error"
+>
+  <app-user-card [userData]="userData"></app-user-card>
+  <p>email: {{ userData.email }}</p>
+</div>

@@ -12,6 +12,7 @@ export class UserDetailsComponent implements OnInit {
   userData: User;
   userId: number;
   loading: boolean = true;
+  error: boolean = false;
 
   constructor(
     private dataService: DataService,
@@ -25,7 +26,10 @@ export class UserDetailsComponent implements OnInit {
         this.userData = res.data;
         this.loading = false;
       },
-      (err) => {}
+      (err) => {
+        this.error = true;
+        this.loading = false;
+      }
     );
   }
 

@@ -12,6 +12,7 @@ export class UsersListComponent implements OnInit, OnDestroy {
   usersList: User[];
   displayedList: User[];
   loading = true;
+  error: boolean = false;
   searchSub: Subscription;
   page: number = 1;
   totalItems: number;
@@ -32,6 +33,7 @@ export class UsersListComponent implements OnInit, OnDestroy {
   }
 
   getPage(page: number) {
+    this.loading = true;
     this.page = page;
     this.dataService.getAllUsers(page).subscribe(
       (res) => {
@@ -41,7 +43,10 @@ export class UsersListComponent implements OnInit, OnDestroy {
         this.itemsPerPage = res.per_page;
         this.totalItems = res.total;
       },
-      (err) => {}
+      (err) => {
+        this.error = err;
+        this.loading = false;
+      }
     );
   }
 

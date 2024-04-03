@@ -9,6 +9,8 @@ import { UsersListComponent } from './components/users-list/users-list.component
 import { HttpClientModule } from '@angular/common/http';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { LoadingSpinerComponent } from './components/loading-spiner/loading-spiner.component';
+import { ErrMessageComponent } from './components/err-message/err-message.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     NavBarComponent,
     UsersListComponent,
     UserDetailsComponent,
+    LoadingSpinerComponent,
+    ErrMessageComponent,
   ],
   imports: [
     BrowserModule,
